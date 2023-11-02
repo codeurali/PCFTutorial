@@ -1,10 +1,12 @@
 import * as React from "react";
 
+// Import the types for the addresses
 import { Address, IHelloWorldProps } from "../types";
 
+// Import the API function to get the addresses
 import { getAdresses } from "./services/api";
 
-import { ComboBox, IComboBoxOption } from "@fluentui/react";
+import { ComboBox, IComboBoxOption } from "@fluentui/react/lib/ComboBox";
 
 export const HelloWorld = (props: IHelloWorldProps) => {
   const [searchTerm, setSearchTerm] = React.useState("" as string);

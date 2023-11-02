@@ -19,7 +19,7 @@ export class ReactSample
 
   /*
    *
-   * On some demo, you can saw this code:
+   * On some PCF using react, you can saw this type of synthax code fot the callback function:
    * private _props: IHelloWorldProps = {
    *  address: {} as Address,
    * onChangeAddress: _updateProps.bind(this),
@@ -29,6 +29,7 @@ export class ReactSample
    * It is not necessary here because we are using an arrow function.
    * And I think it is not a good practice to bind a function to a class.
    * Because it can be confusing when you are using the 'this' keyword in the function.
+   * Also, binding a function to a class can cause performance issues.
    *
    */
 
