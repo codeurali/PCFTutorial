@@ -19,7 +19,7 @@ export class ReactSample
 
   /*
    *
-   * On some PCF using react, you can saw this type of synthax code fot the callback function:
+   * On some PCF using react, you can see this type of synthax code fot the callback function:
    * private _props: IHelloWorldProps = {
    *  address: {} as Address,
    * onChangeAddress: _updateProps.bind(this),
