@@ -23,6 +23,7 @@
     <property name="street_name" display-name-key="Street Name" description-key="" of-type="SingleLine.Text" usage="bound" required="true" />
     <property name="postcode" display-name-key="Postcode" description-key="Postcode description" of-type="SingleLine.Text" usage="bound" required="true" />
     <property name="city" display-name-key="City" description-key="City description" of-type="SingleLine.Text" usage="bound" required="true" />
+    <property name="state" display-name-key="State" description-key="State description" of-type="SingleLine.Text" usage="bound" required="true" />
     
 
     <!--

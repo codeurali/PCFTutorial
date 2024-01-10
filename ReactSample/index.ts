@@ -1,3 +1,5 @@
+// PPCF Component = Handle data on the form.
+
 import { IInputs, IOutputs } from "./generated/ManifestTypes";
 import { IHelloWorldProps, Address } from "../types";
 import { HelloWorld } from "./HelloWorld";
@@ -29,7 +31,7 @@ export class ReactSample
    * It is not necessary here because we are using an arrow function.
    * And I think it is not a good practice to bind a function to a class.
    * Because it can be confusing when you are using the 'this' keyword in the function.
-   * Also, binding a function to a class can cause performance issues.
+   * Also, binding a function to a class can cause performance issues because the class is regenerated on every render.
    *
    */
 
@@ -68,6 +70,7 @@ export class ReactSample
 
   // Update the props based on the context values set by the customizer in the manifest editor
   private _updateProps(context: ComponentFramework.Context<IInputs>): void {
+    // Change to the desired Address format
     if (context.parameters.address_id.raw) {
       this._props.address = {
         id: context.parameters.address_id.raw || "",
@@ -80,12 +83,24 @@ export class ReactSample
     }
   }
 
+  private _clearProps(): void {
+    this._props.address = {
+      id: "",
+      street_number: "",
+      street_name: "",
+      postcode: "",
+      city: "",
+    };
+    this._notifyOutputChanged();
+  }
+
   /**
    * It is called by the framework prior to a control receiving new data.
    * @returns an object based on nomenclature defined in manifest, expecting object[s] for property marked as “bound” or “output”
    */
   public getOutputs(): IOutputs {
     return {
+      // Change to the desired data to be sent to the form
       address_id: this._props.address.id,
       street_number: this._props.address.street_number,
       street_name: this._props.address.street_name,
